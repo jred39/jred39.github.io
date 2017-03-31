@@ -2,9 +2,36 @@
  <html> 
 <head> <title>CSS3 Sandbox Webpage</title> 
  <script>
- function redLight(e){
- 	e.style.animationName='flashlight';
-    e.style.animationDuration='8sec';
+ function redLight(){
+ 	document.getElementById("redB").style.color = "blue";
+    document.getElementById("redB").innerHTML="Blue";
+   //document.getElementById("redB").AnimationIterationCount="infinite";
+ 	
+ }
+ 
+ function expand(){
+ 	document.getElementById("li1").style.height = "40px";
+    document.getElementById("li1").style.color = "blue";
+ }
+ 
+ function expand2(){
+ 	document.getElementById("li2").style.height = "40px";
+    document.getElementById("li2").style.color = "blue";
+ }
+ 
+ function expand3(){
+ 	document.getElementById("li3").style.height = "40px";
+    document.getElementById("li3").style.color = "blue";
+ }
+ 
+ function expand4(){
+ 	document.getElementById("li4").style.height = "40px";
+    document.getElementById("li4").style.color = "blue";
+ }
+ 
+ function expand5(){
+ 	document.getElementById("li5").style.height = "40px";
+    document.getElementById("li5").style.color = "blue";
  }
  </script> 
  <style> 
@@ -49,6 +76,7 @@ h1 {
  li:hover { 
  	width:425px; 
  } 
+ 
  body { 
  	background-image: url(http://i.imgur.com/kNj6Dzt.jpg); 
  	background-size:cover; 
@@ -63,16 +91,19 @@ h1 {
  	height:75px; 
  	width:250px; 
 	bottom: 5; 
- 	right: 5; 
- 	position:fixed; 
+ 	right: 5;
+    position:fixed;
  	padding:10px; 
  	font:sans; 
  	color:darkblue; 
  	background-color:rgb(0,150,0); 
  	opacity:0.5; 
  	font-size:20px; 
- 	font-family:"Lucida Console", Monaco, monospace; 
- } 
+ 	font-family:"Lucida Console", Monaco, monospace;
+ }
+ #box:click {
+ 	animation:moveBox;
+ }
  
  .dropdown {
  	position:absolute;
@@ -135,7 +166,7 @@ p:hover {
     background-color:black;
     text-align:50%;
     margin-left:70px;
-    animation-name:flashlight;
+    animation:flashlight;
     animation-duration:8s;
     padding:5px;
     position:absolute;
@@ -151,6 +182,10 @@ p:hover {
     71.45%  {background-color:red;}
     100% {background-color:black;}
 }
+@keyframes moveBox {
+	from {right:5};
+    to {right:300};
+}
  </style>   
  </head> 
  <body> 
@@ -160,11 +195,11 @@ p:hover {
    <p id="bio">Hover over the List items.</p> 
    
    <ul> 
-    <li href="#">List item 1</li> 
-    <li href="#">List item 2</li> 
- 	<li href="#">List item 3</li> 
- 	<li href="#">List item 4</li> 
- 	<li href="#">List item 5</li> 
+    <li id="li1" onclick=expand() href="#">List item 1</li> 
+    <li id="li2" onclick=expand2() href="#">List item 2</li> 
+ 	<li id="li3" onclick=expand3() href="#">List item 3</li> 
+ 	<li id="li4" onclick=expand4() href="#">List item 4</li> 
+ 	<li id="li5" onclick=expand5() href="#">List item 5</li> 
    </ul> 
  	</div>
     
